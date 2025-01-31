@@ -67,18 +67,21 @@ export const serviceData = [
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#fdefe6",
   },
+
   {
     icon: <ion-icon name="card"></ion-icon>,
     title: "Safe Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#ceebe9",
   },
+
   {
     icon: <ion-icon name="shield-half-outline"></ion-icon>,
     title: "Secure Payment",
     subtitle: "Lorem ipsum dolor sit amet.",
     bg: "#e2f2b2",
   },
+
   {
     icon: <ion-icon name="headset"></ion-icon>,
     title: " Back Guarantee",
@@ -107,6 +110,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.5,
   },
+
   {
     id: "02",
     productName: "Rivet Bigelow Modern ",
@@ -130,6 +134,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "08",
     productName: "Baltsar Chair",
@@ -153,6 +158,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "09",
     productName: "Helmar Chair",
@@ -176,6 +182,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "12",
     productName: "Realme 8",
@@ -199,6 +206,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.8,
   },
+
   {
     id: "13",
     productName: "One Plus Nord",
@@ -290,6 +298,7 @@ export const products = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "26",
     productName: "Rivet Bigelow Modern ",
@@ -312,6 +321,7 @@ export const products = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "04",
     productName: "Fllufy Sheep Sofa",
@@ -380,6 +390,7 @@ export const products = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "07",
     productName: "Sakarias Armchair",
@@ -494,6 +505,7 @@ export const products = [
     ],
     avgRating: 4.8,
   },
+
   {
     id: "25",
     productName: "Sakarias Armchair",
@@ -516,6 +528,7 @@ export const products = [
     ],
     avgRating: 4.7,
   },
+
   {
     id: "11",
     productName: "Apple iPhone 12 Max",
@@ -768,6 +781,7 @@ export const products = [
     ],
     avgRating: 4.8,
   },
+  
   {
     id: "22",
     productName: "Black Headphones",

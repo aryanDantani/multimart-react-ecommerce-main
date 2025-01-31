@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { addToCart } from "../../app/features/cart/cartSlice";
+import ImageMagnify from "react-image-magnify";
 import "./product-details.css";
 
 const ProductDetails = ({ selectedProduct }) => {
@@ -22,7 +23,22 @@ const ProductDetails = ({ selectedProduct }) => {
       <Container>
         <Row className="justify-content-center">
           <Col md={6}>
-            <img loading="lazy" src={selectedProduct?.imgUrl} alt="" />
+            {selectedProduct?.imgUrl && (
+              <ImageMagnify
+                {...{
+                  smallImage: {
+                    alt: selectedProduct?.productName,
+                    isFluidWidth: true,
+                    src: selectedProduct?.imgUrl,
+                  },
+                  largeImage: {
+                    src: selectedProduct?.imgUrl,
+                    width: 1200,
+                    height: 1200,
+                  },
+                }}
+              />
+            )}
           </Col>
           <Col md={6}>
             <h2>{selectedProduct?.productName}</h2>
