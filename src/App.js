@@ -6,10 +6,14 @@ import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Home = lazy(() => import("./pages/Home"));
 const Shop = lazy(() => import("./pages/Shop"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Product = lazy(() => import("./pages/Product"));
+const SignInSignupPage = lazy(() =>
+  import("./components/SignInAndSignUp/SignInAndSignUp")
+);
 
 function App() {
   return (
@@ -26,14 +30,24 @@ function App() {
           pauseOnHover
           theme="light"
         />
-        <NavBar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:id" element={<Product />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/*"
+            element={
+              <>
+                <NavBar />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/shop" element={<Shop />} />
+                  <Route path="/shop/:id" element={<Product />} />
+                  <Route path="/cart" element={<Cart />} />
+                </Routes>
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/signin-signup" element={<SignInSignupPage />} />
         </Routes>
-        <Footer />
       </Router>
     </Suspense>
   );
