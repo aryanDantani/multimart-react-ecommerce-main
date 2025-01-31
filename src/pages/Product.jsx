@@ -9,11 +9,15 @@ import ProductReviews from "../components/ProductReviews/ProductReviews";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 
 const Product = () => {
+  
   const { id } = useParams();
+
   const [selectedProduct, setSelectedProduct] = useState(
     products.filter((item) => parseInt(item.id) === parseInt(id))[0]
   );
+
   const [relatedProducts, setRelatedProducts] = useState([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setSelectedProduct(
@@ -31,6 +35,7 @@ const Product = () => {
   useWindowScrollToTop();
 
   return (
+
     <Fragment>
       <Banner title={selectedProduct?.productName} />
       <ProductDetails selectedProduct={selectedProduct} />
@@ -42,6 +47,7 @@ const Product = () => {
         <ShopList productItems={relatedProducts} />
       </section>
     </Fragment>
+
   );
 };
 

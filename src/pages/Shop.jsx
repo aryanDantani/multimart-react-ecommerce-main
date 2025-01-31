@@ -8,12 +8,15 @@ import Banner from "../components/Banner/Banner";
 import useWindowScrollToTop from "../hooks/useWindowScrollToTop";
 
 const Shop = () => {
+  
   const [filterList, setFilterList] = useState(
     products.filter((item) => item.category === "sofa")
   );
+
   useWindowScrollToTop();
 
   return (
+
     <Fragment>
       <Banner title="product" />
       <section className="filter-bar">
@@ -32,6 +35,7 @@ const Shop = () => {
         </Container>
       </section>
     </Fragment>
+
   );
 };
 
