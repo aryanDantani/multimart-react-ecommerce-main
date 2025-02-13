@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Col } from "react-bootstrap";
 import "./product-card.css";
 import { useNavigate } from "react-router-dom";
@@ -8,12 +9,17 @@ import { addToCart } from "../../app/features/cart/cartSlice";
 const ProductCard = ({ title, productItem }) => {
   const dispatch = useDispatch();
   const router = useNavigate();
+  const IsAuthenticated = sessionStorage.getItem(".auth");
   const handelClick = () => {
     router(`/shop/${productItem.id}`);
   };
   const handelAdd = (productItem) => {
-    dispatch(addToCart({ product: productItem, num: 1 }));
-    toast.success("Product has been added to cart!");
+    if (IsAuthenticated) {
+      dispatch(addToCart({ product: productItem, num: 1 }));
+      toast.success("Product has been added to cart!");
+    } else {
+      router("/signin-signup");
+    }
   };
   return (
     <Col md={3} sm={5} xs={10} className="product mtop">
