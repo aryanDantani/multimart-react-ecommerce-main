@@ -5,17 +5,23 @@ import { toast } from "react-toastify";
 import { addToCart } from "../../app/features/cart/cartSlice";
 import ImageMagnify from "react-image-magnify";
 import "./product-details.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = ({ selectedProduct }) => {
   const dispatch = useDispatch();
-
+  const router = useNavigate();
+  const IsAuthenticated = sessionStorage.getItem(".auth");
   const [quantity, setQuantity] = useState(1);
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };
   const handelAdd = (selectedProduct, quantity) => {
-    dispatch(addToCart({ product: selectedProduct, num: quantity }));
-    toast.success("Product has been added to cart!");
+    if (IsAuthenticated) {
+      dispatch(addToCart({ product: selectedProduct, num: quantity }));
+      toast.success("Product has been added to cart!");
+    } else {
+      router("/signin-signup");
+    }
   };
 
   return (

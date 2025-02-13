@@ -1,6 +1,30 @@
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Existing styles with animations */
 .wrapper {
   text-align: center;
   background-color: white;
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect */
 }
 
 .icon {
@@ -13,6 +37,12 @@
   font-size: 25px;
   background: #f3f5f9;
   margin: 20px auto;
+  transition: transform 0.3s ease; /* Smooth transition for hover */
+
+  /* Bounce on hover */
+  &:hover {
+    animation: bounce 0.6s infinite;
+  }
 }
 
 .wrapper .row {
@@ -22,6 +52,14 @@
 .wrapper .feature {
   padding: 10px;
   border: 4px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling effect */
+
+  /* Scale and shadow on hover */
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
 }
 
 .wrapper .feature h3 {
@@ -34,4 +72,5 @@
 .wrapper p {
   font-size: 15px;
   margin-top: 20px;
+  animation: fadeIn 1.5s ease-in-out; /* Delayed fade-in for text */
 }
