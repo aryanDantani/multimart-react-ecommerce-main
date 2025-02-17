@@ -119,7 +119,11 @@ const NavBar = () => {
             </Nav.Item>
             <Nav.Item>
               {IsAuthenticated ? (
-                <Link aria-label="Go to Cart Page" className="navbar-link">
+                <Link
+                  to="/profile"
+                  aria-label="Go to Cart Page"
+                  className="navbar-link"
+                >
                   <span className="nav-link-label">User Name</span>
                 </Link>
               ) : (
